@@ -107,7 +107,8 @@ RUN export OPENSSL_ROOT=openssl-1.1.1m && \
     manylinux-entrypoint /build_scripts/build-openssl.sh
 
 COPY build_scripts/build-cpython.sh /build_scripts/
-
+COPY build_scripts/maybe-patch-cpython.sh /build_scripts/
+COPY build_scripts/cpython-patches /build_scripts/cpython-patches
 
 FROM build_cpython AS build_cpython36
 COPY build_scripts/cpython-pubkeys.txt /build_scripts/cpython-pubkeys.txt

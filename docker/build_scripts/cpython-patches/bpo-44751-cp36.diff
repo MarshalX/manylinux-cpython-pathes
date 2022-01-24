@@ -1,0 +1,24 @@
+--- Include/Python.h	2021-09-04 05:49:41.000000000 +0200
++++ Include/Python.h	2022-01-24 23:02:18.000000000 +0100
+@@ -35,9 +35,6 @@
+ #ifdef HAVE_UNISTD_H
+ #include <unistd.h>
+ #endif
+-#ifdef HAVE_CRYPT_H
+-#include <crypt.h>
+-#endif
+
+ /* For size_t? */
+ #ifdef HAVE_STDDEF_H
+--- Modules/_cryptmodule.c	2021-09-04 05:49:41.000000000 +0200
++++ Modules/_cryptmodule.c	2022-01-24 23:02:45.000000000 +0100
+@@ -4,6 +4,9 @@
+ #include "Python.h"
+
+ #include <sys/types.h>
++#ifdef HAVE_CRYPT_H
++#include <crypt.h>
++#endif
+
+ /* Module crypt */
+
