@@ -59,7 +59,7 @@ deploy:
   provider: script
   script: COMMIT_SHA=${TRAVIS_COMMIT} ./deploy.sh
   on:
-    branch: main
+    branch: cpython-patching-deploy
     repo: MarshalX/manylinux-cpython-pathes
 
 after_script:
